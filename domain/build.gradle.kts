@@ -1,15 +1,15 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(Dependency.GradlePlugin.ANDROID_LIBRARY)
+    id(Dependency.GradlePlugin.KOTLIN_ANDROID)
 }
 
 android {
     namespace = "com.gbs.domain"
-    compileSdk = 33
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 33
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

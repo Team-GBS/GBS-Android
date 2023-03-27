@@ -1,16 +1,16 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(Dependency.GradlePlugin.ANDROID_APPLICATION)
+    id(Dependency.GradlePlugin.KOTLIN_ANDROID)
 }
 
 android {
     namespace = "com.gbs.gbs_android"
-    compileSdk = 33
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
         applicationId = "com.gbs.gbs_android"
-        minSdk = 21
-        targetSdk = 33
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
         versionCode = 1
         versionName = "1.0"
 
