@@ -37,7 +37,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.4.4"
     }
     packagingOptions {
         resources {
@@ -59,4 +59,5 @@ dependencies {
     androidTestImplementation(Dependency.Androidx.COMPOSE_JUNIT)
     debugImplementation(Dependency.Androidx.COMPOSE_TOOLING)
     debugImplementation(Dependency.Androidx.COMPOSE_MANIFEST)
+    implementation(Dependency.Androidx.SPLASH)
 }
