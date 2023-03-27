@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "GBS_Android"
-include ':presentaion'
-include ':data'
-include ':domain'
-include ':di'
+include(":presentaion")
+include(":data")
+include(":domain")
+include(":di")
