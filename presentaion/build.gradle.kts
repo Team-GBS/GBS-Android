@@ -60,4 +60,5 @@ dependencies {
     debugImplementation(Dependency.Androidx.COMPOSE_TOOLING)
     debugImplementation(Dependency.Androidx.COMPOSE_MANIFEST)
     implementation(Dependency.Androidx.SPLASH)
+    implementation(Dependency.GAuth.GAUTH)
 }

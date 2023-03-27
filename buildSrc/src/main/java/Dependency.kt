@@ -19,8 +19,6 @@ object Dependency {
         const val SPLASH = "androidx.core:core-splashscreen:${Versions.SPLASH}"
     }
 
-
-
     object Google {
         const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
     }
@@ -32,5 +30,9 @@ object Dependency {
     object AndroidTest {
         const val ANDROID_JUNIT = "androidx.test.ext:junit:${Versions.ANDROID_JUNIT}"
         const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO_CORE}"
+    }
+
+    object GAuth {
+        const val GAUTH = "com.github.GSM-MSG:GAuth-Signin-Android:${Versions.GAUTH}"
     }
 }
