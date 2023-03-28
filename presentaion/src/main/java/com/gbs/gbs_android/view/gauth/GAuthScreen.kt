@@ -13,7 +13,9 @@ private const val GAUTH_KEY = BuildConfig.GAUTH_KEY
 private const val GAUTH_KEY_SECRET = BuildConfig.GAUTH_KEY_SECRET
 
 @Composable
-fun GAuthScreen(modifier: Modifier = Modifier) {
+fun GAuthScreen(
+    modifier: Modifier = Modifier
+) {
     Column(
         modifier.fillMaxSize()
     ) {
