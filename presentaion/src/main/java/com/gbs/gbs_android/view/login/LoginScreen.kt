@@ -1,5 +1,6 @@
 package com.gbs.gbs_android.view.login
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
@@ -25,28 +26,26 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             .padding(horizontal = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = modifier.weight(2f))
+        Spacer(modifier = modifier.weight(1f))
         Image(painter = painterResource(id = R.drawable.gbs_logo), contentDescription = null)
         Text(text = "GBS", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(45.dp))
         GAuthSigninButton()
-        Spacer(modifier = modifier.height(40.dp))
-        GAuthSignupButton()
         Spacer(modifier = modifier.weight(1f))
     }
 }
 
-
 @Composable
-fun _GAuthSigninWebView(
+fun GAuthSignin(
     clientId: String,
     redirectUri: String
 ) {
+    Log.d("signin", "signin")
     GAuthSigninWebView(
         clientId = clientId,
         redirectUri = redirectUri
     ) { response ->
-
+        Log.d("signin", response)
     }
 }
 
@@ -102,6 +101,7 @@ fun GetCodeInfoRequest(
     }
 }
 
+
 @Composable
 fun GAuthSigninButton(
     style: Types.Style = Types.Style.DEFAULT,
@@ -119,19 +119,3 @@ fun GAuthSigninButton(
     }
 }
 
-@Composable
-fun GAuthSignupButton(
-    style: Types.Style = Types.Style.DEFAULT,
-    actionType: Types.ActionType = Types.ActionType.SIGNUP,
-    colors: Types.Colors = Types.Colors.OUTLINE,
-    horizontalPaddingValue: Dp = 50.dp
-) {
-    GAuthButton(
-        style,
-        actionType,
-        colors,
-        horizontalPaddingValue
-    ) {
-
-    }
-}
