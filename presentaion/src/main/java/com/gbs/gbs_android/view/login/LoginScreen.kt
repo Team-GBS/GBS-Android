@@ -45,7 +45,7 @@ fun LoginScreen(
         Text(text = "GBS", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(45.dp))
 //        GAuth_Button(onClicked = { isClicked = true })
-        GAuth_Button { navigateToGAuth() }
+        GAuth_Button(onClicked = { navigateToGAuth() })
         Spacer(modifier = modifier.weight(1f))
 
 //        if (isClicked) {
