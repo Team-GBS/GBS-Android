@@ -30,7 +30,12 @@ fun LoginScreen(modifier: Modifier = Modifier) {
         Image(painter = painterResource(id = R.drawable.gbs_logo), contentDescription = null)
         Text(text = "GBS", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(45.dp))
-        GAuthSigninButton()
+        GAuth_Button(onClick = {
+            GAuthSignin(
+                clientId = "clientId",
+                redirectUri = "https://localhost:3000"
+            )
+        })
         Spacer(modifier = modifier.weight(1f))
     }
 }
@@ -101,13 +106,13 @@ fun GetCodeInfoRequest(
     }
 }
 
-
 @Composable
-fun GAuthSigninButton(
+fun GAuth_Button(
     style: Types.Style = Types.Style.DEFAULT,
     actionType: Types.ActionType = Types.ActionType.SIGNIN,
     colors: Types.Colors = Types.Colors.OUTLINE,
-    horizontalPaddingValue: Dp = 50.dp
+    horizontalPaddingValue: Dp = 50.dp,
+    onClick : @Composable () -> Unit
 ) {
     GAuthButton(
         style,
@@ -115,7 +120,7 @@ fun GAuthSigninButton(
         colors,
         horizontalPaddingValue
     ) {
-
+        Log.d("clicked", "clicked")
+        onClick
     }
 }
-
