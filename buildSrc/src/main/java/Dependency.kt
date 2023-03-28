@@ -17,6 +17,7 @@ object Dependency {
         const val COMPOSE_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
         const val COMPOSE_MANIFEST = "androidx.compose.ui:ui-test-manifest:${Versions.COMPOSE}"
         const val SPLASH = "androidx.core:core-splashscreen:${Versions.SPLASH}"
+        const val NAVIGATION = "androidx.navigation:navigation-compose:${Versions.NAVIGATION}"
     }
 
     object Google {
