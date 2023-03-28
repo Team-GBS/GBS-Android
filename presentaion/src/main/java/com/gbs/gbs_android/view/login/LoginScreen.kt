@@ -30,7 +30,7 @@ private const val redirectUri = "https://localhost:3000"
 @Composable
 fun LoginScreen(
     modifier: Modifier = Modifier,
-    navController: NavController = rememberNavController()
+    navigateToGAuth: () -> Unit
 ) {
     var isClicked by remember { mutableStateOf(false) }
 
@@ -44,80 +44,81 @@ fun LoginScreen(
         Image(painter = painterResource(id = R.drawable.gbs_logo), contentDescription = null)
         Text(text = "GBS", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(45.dp))
-        GAuth_Button(onClicked = { isClicked = true })
+//        GAuth_Button(onClicked = { isClicked = true })
+        GAuth_Button { navigateToGAuth() }
         Spacer(modifier = modifier.weight(1f))
 
-        if (isClicked) {
-            navController.navigate(gauthRoute)
+//        if (isClicked) {
+//            navController.navigate(gauthRoute)
 //            GAuthSignin()
-        }
+//        }
     }
 }
 
-@Composable
-fun GAuthSignin(
-    clientId: String = GAUTH_KEY,
-    Uri: String = redirectUri
-) {
-    GAuthSigninWebView(
-        clientId = clientId,
-        redirectUri = Uri
-    ) { response ->
-        Log.d("signin", response)
-    }
-}
-
-@Composable
-fun GetGAuthTokenRequest(
-    code: String,
-    clientSecret: String = GAUTH_KEY_SECRET,
-    clientId: String = GAUTH_KEY,
-    Uri: String = redirectUri
-) {
-    GAuth.getGAuthTokenRequest(
-        code,
-        clientSecret,
-        clientId,
-        Uri
-    ) { response ->
-
-    }
-}
-
-@Composable
-fun TokenRefreshRequest(
-    requestToken: String
-) {
-    GAuth.tokenRefreshRequest(
-        requestToken
-    ) { response ->
-
-    }
-}
-
-@Composable
-fun GetUserInfoRequest(
-    accessToken: String
-) {
-    GAuth.getUserInfoRequest(
-        accessToken
-    ) { response ->
-
-    }
-}
-
-@Composable
-fun GetCodeInfoRequest(
-    email: String,
-    password: String
-) {
-    GAuth.getCodeInfoRequest(
-        email,
-        password
-    ) { response ->
-
-    }
-}
+//@Composable
+//fun GAuthSignin(
+//    clientId: String = GAUTH_KEY,
+//    Uri: String = redirectUri
+//) {
+//    GAuthSigninWebView(
+//        clientId = clientId,
+//        redirectUri = Uri
+//    ) { response ->
+//        Log.d("signin", response)
+//    }
+//}
+//
+//@Composable
+//fun GetGAuthTokenRequest(
+//    code: String,
+//    clientSecret: String = GAUTH_KEY_SECRET,
+//    clientId: String = GAUTH_KEY,
+//    Uri: String = redirectUri
+//) {
+//    GAuth.getGAuthTokenRequest(
+//        code,
+//        clientSecret,
+//        clientId,
+//        Uri
+//    ) { response ->
+//
+//    }
+//}
+//
+//@Composable
+//fun TokenRefreshRequest(
+//    requestToken: String
+//) {
+//    GAuth.tokenRefreshRequest(
+//        requestToken
+//    ) { response ->
+//
+//    }
+//}
+//
+//@Composable
+//fun GetUserInfoRequest(
+//    accessToken: String
+//) {
+//    GAuth.getUserInfoRequest(
+//        accessToken
+//    ) { response ->
+//
+//    }
+//}
+//
+//@Composable
+//fun GetCodeInfoRequest(
+//    email: String,
+//    password: String
+//) {
+//    GAuth.getCodeInfoRequest(
+//        email,
+//        password
+//    ) { response ->
+//
+//    }
+//}
 
 @Composable
 fun GAuth_Button(
