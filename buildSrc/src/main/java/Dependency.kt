@@ -20,6 +20,7 @@ object Dependency {
         const val SPLASH = "androidx.core:core-splashscreen:${Versions.SPLASH}"
         const val NAVIGATION = "androidx.navigation:navigation-compose:${Versions.NAVIGATION}"
         const val DATASTORE = "androidx.datastore:datastore-preferences:${Versions.DATASTORE}"
+        const val HILT_NAVIGATION_COMPOSE = "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAVIGATION_COMPOSE}"
     }
 
     object Google {
