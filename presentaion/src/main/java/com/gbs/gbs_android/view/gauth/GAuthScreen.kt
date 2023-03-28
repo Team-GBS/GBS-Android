@@ -35,7 +35,7 @@ fun GAuthSignin(
                 code = code,
                 clientId = GAUTH_KEY,
                 clientSecret = GAUTH_KEY_SECRET,
-                redirectUri = "https://localhost:3000"
+                redirectUri = Uri
             ) { token ->
 
             }
