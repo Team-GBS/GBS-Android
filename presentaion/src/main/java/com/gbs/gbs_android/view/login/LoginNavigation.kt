@@ -1,6 +1,5 @@
 package com.gbs.gbs_android.view.login
 
-import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 
