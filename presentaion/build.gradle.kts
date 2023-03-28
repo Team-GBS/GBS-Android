@@ -1,5 +1,4 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id(Dependency.GradlePlugin.ANDROID_APPLICATION)
