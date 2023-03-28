@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id(Dependency.GradlePlugin.ANDROID_APPLICATION)
     id(Dependency.GradlePlugin.KOTLIN_ANDROID)
@@ -18,6 +20,9 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "GAUTH_KEY", getApiKey("GAUTH_KEY"))
+        buildConfigField("String", "GAUTH_KEY_SECRET", getApiKey("GAUTH_KEY_SECRET"))
     }
 
     buildTypes {
@@ -44,6 +49,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
+
+fun getApiKey(propertyKey: String): String {
+    return gradleLocalProperties(rootDir).getProperty(propertyKey)
 }
 
 dependencies {

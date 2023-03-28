@@ -12,11 +12,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.gbs.gbs_android.BuildConfig
 import com.gbs.gbs_android.R
 import com.msg.gauthsignin.GAuth
 import com.msg.gauthsignin.GAuthSigninWebView
 import com.msg.gauthsignin.component.GAuthButton
 import com.msg.gauthsignin.component.utils.Types
+
+private const val GAUTH_KEY = BuildConfig.GAUTH_KEY
+private const val GAUTH_KEY_SECRET = BuildConfig.GAUTH_KEY_SECRET
 
 @Composable
 fun LoginScreen(modifier: Modifier = Modifier) {
@@ -30,9 +34,9 @@ fun LoginScreen(modifier: Modifier = Modifier) {
         Image(painter = painterResource(id = R.drawable.gbs_logo), contentDescription = null)
         Text(text = "GBS", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(45.dp))
-        GAuth_Button(onClick = {
+        GAuth_Button(clicked = {
             GAuthSignin(
-                clientId = "clientId",
+                clientId = GAUTH_KEY,
                 redirectUri = "https://localhost:3000"
             )
         })
@@ -112,7 +116,7 @@ fun GAuth_Button(
     actionType: Types.ActionType = Types.ActionType.SIGNIN,
     colors: Types.Colors = Types.Colors.OUTLINE,
     horizontalPaddingValue: Dp = 50.dp,
-    onClick : @Composable () -> Unit
+    clicked : @Composable () -> Unit
 ) {
     GAuthButton(
         style,
@@ -120,7 +124,6 @@ fun GAuth_Button(
         colors,
         horizontalPaddingValue
     ) {
-        Log.d("clicked", "clicked")
-        onClick
+        clicked
     }
 }
