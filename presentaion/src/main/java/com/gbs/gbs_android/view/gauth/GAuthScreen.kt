@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.gbs.gbs_android.BuildConfig
+import com.msg.gauthsignin.GAuth
 import com.msg.gauthsignin.GAuthSigninWebView
 
 private const val GAUTH_KEY = BuildConfig.GAUTH_KEY
@@ -29,6 +30,15 @@ fun GAuthSignin(
         clientId = clientId,
         redirectUri = Uri
     ) { response ->
-        Log.d("signin", response)
+        if (response.isNotEmpty()) {
+            GAuth.getGAuthTokenRequest(
+                code = response,
+                clientId = GAUTH_KEY,
+                clientSecret = GAUTH_KEY_SECRET,
+                redirectUri = "https://localhost:3000"
+            ) { token ->
+
+            }
+        }
     }
 }
