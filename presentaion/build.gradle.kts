@@ -77,4 +77,5 @@ dependencies {
     implementation(Dependency.Androidx.NAVIGATION)
     implementation(Dependency.Google.HILT)
     kapt(Dependency.Google.HILT_COMPILER)
+    implementation(Dependency.Androidx.HILT_NAVIGATION_COMPOSE)
 }
