@@ -8,6 +8,7 @@ object Versions {
     const val COMPOSE = "1.3.1"
     const val SPLASH = "1.0.0-beta01"
     const val NAVIGATION = "2.5.3"
+    const val DATASTORE = "1.0.0"
 
     const val MATERIAL = "1.8.0"
     const val MATERIAL3 = "1.0.1"

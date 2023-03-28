@@ -29,10 +29,10 @@ fun GAuthSignin(
     GAuthSigninWebView(
         clientId = clientId,
         redirectUri = Uri
-    ) { response ->
-        if (response.isNotEmpty()) {
+    ) { code ->
+        if (code.isNotEmpty()) {
             GAuth.getGAuthTokenRequest(
-                code = response,
+                code = code,
                 clientId = GAUTH_KEY,
                 clientSecret = GAUTH_KEY_SECRET,
                 redirectUri = "https://localhost:3000"
