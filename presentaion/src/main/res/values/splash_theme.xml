@@ -3,7 +3,7 @@
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimationDuration">2000</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/gbs_logo</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/gbs_splash</item>
         <item name="windowSplashScreenIconBackgroundColor">@color/white</item>
     </style>
 </resources>

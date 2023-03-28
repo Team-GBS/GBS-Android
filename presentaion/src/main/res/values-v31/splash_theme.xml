@@ -4,7 +4,7 @@
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="android:windowSplashScreenBackground">@color/white</item>
         <item name="android:windowSplashScreenAnimationDuration">2000</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/gbs_logo</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/gbs_splash</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/white</item>
     </style>
 </resources>
