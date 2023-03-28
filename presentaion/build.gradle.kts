@@ -1,8 +1,11 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id(Dependency.GradlePlugin.ANDROID_APPLICATION)
     id(Dependency.GradlePlugin.KOTLIN_ANDROID)
+    id(Dependency.GradlePlugin.HILT)
+    kotlin("kapt")
 }
 
 android {
@@ -73,4 +76,6 @@ dependencies {
     implementation(Dependency.Androidx.SPLASH)
     implementation(Dependency.GAuth.GAUTH)
     implementation(Dependency.Androidx.NAVIGATION)
+    implementation(Dependency.Google.HILT)
+    kapt(Dependency.Google.HILT_COMPILER)
 }
