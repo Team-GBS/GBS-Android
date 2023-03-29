@@ -30,13 +30,13 @@ fun LoginScreen(
         Image(painter = painterResource(id = R.drawable.gbs_logo), contentDescription = null)
         Text(text = "GBS", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(45.dp))
-        GAuth_Button(onClicked = { navigateToGAuth() })
+        GAuthSignInButton(onClicked = { navigateToGAuth() })
         Spacer(modifier = modifier.weight(1f))
     }
 }
 
 @Composable
-fun GAuth_Button(
+fun GAuthSignInButton(
     style: Types.Style = Types.Style.DEFAULT,
     actionType: Types.ActionType = Types.ActionType.SIGNIN,
     colors: Types.Colors = Types.Colors.OUTLINE,

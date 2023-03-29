@@ -34,5 +34,5 @@ class LocalDataSourceImpl @Inject constructor(
         } else {
             throw exception
         }
-    }.map { it[TOKEN] ?: "저장되지않았습니다." }
+    }.map { it[TOKEN] }
 }

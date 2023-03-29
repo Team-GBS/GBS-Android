@@ -4,14 +4,14 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 
-const val gauthRoute = "gauth_route"
+const val gAuthRoute = "gAuth_route"
 
-fun NavController.navigateToGauth() {
-    this.navigate(gauthRoute)
+fun NavController.navigateToGAuth() {
+    this.navigate(gAuthRoute)
 }
 
-fun NavGraphBuilder.gauthScreen(navigateToHome: () -> Unit) {
-    composable(route = gauthRoute) {
+fun NavGraphBuilder.gAuthScreen(navigateToHome: () -> Unit) {
+    composable(route = gAuthRoute) {
         GAuthScreen(navigateToHome =  navigateToHome)
     }
 }
