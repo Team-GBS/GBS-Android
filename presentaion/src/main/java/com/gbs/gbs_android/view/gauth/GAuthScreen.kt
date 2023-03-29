@@ -16,14 +16,16 @@ private const val GAUTH_KEY_SECRET = BuildConfig.GAUTH_KEY_SECRET
 @Composable
 fun GAuthScreen(
     modifier: Modifier = Modifier,
-    gAuthViewModel: GAuthViewModel = hiltViewModel()
+    gAuthViewModel: GAuthViewModel = hiltViewModel(),
+    navigateToHome: () -> Unit
 ) {
     Column(
         modifier.fillMaxSize()
     ) {
         GAuthSignin(
             setToken = gAuthViewModel::setToken,
-            getToken = gAuthViewModel::getToken
+            getToken = gAuthViewModel::getToken,
+            navigateToHome = navigateToHome
         )
     }
 }
@@ -33,7 +35,8 @@ fun GAuthSignin(
     clientId: String = GAUTH_KEY,
     Uri: String = "https://localhost:3000",
     setToken: (String) -> Unit,
-    getToken: () -> Unit
+    getToken: () -> Unit,
+    navigateToHome: () -> Unit
 ) {
     GAuthSigninWebView(
         clientId = clientId,
@@ -49,6 +52,7 @@ fun GAuthSignin(
                 token.accessToken?.let {
                     setToken(it)
                     getToken()
+                    navigateToHome()
                 }
             }
         }

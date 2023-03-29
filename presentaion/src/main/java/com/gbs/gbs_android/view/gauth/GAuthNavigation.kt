@@ -10,8 +10,8 @@ fun NavController.navigateToGauth() {
     this.navigate(gauthRoute)
 }
 
-fun NavGraphBuilder.gauthScreen() {
+fun NavGraphBuilder.gauthScreen(navigateToHome: () -> Unit) {
     composable(route = gauthRoute) {
-        GAuthScreen()
+        GAuthScreen(navigateToHome =  navigateToHome)
     }
 }

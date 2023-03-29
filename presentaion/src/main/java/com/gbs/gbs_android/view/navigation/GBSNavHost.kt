@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import com.gbs.gbs_android.view.gauth.gauthScreen
 import com.gbs.gbs_android.view.gauth.navigateToGauth
 import com.gbs.gbs_android.view.home.homeScreen
+import com.gbs.gbs_android.view.home.navigateToHome
 import com.gbs.gbs_android.view.login.loginRoute
 import com.gbs.gbs_android.view.login.loginScreen
 
@@ -16,6 +17,8 @@ fun GBSNavHost(navHostController: NavHostController) {
             navHostController.navigateToGauth()
         })
         homeScreen()
-        gauthScreen()
+        gauthScreen(navigateToHome = {
+            navHostController.navigateToHome()
+        })
     }
 }
