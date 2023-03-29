@@ -22,7 +22,8 @@ fun GAuthScreen(
         modifier.fillMaxSize()
     ) {
         GAuthSignin(
-            setToken = gAuthViewModel::setToken
+            setToken = gAuthViewModel::setToken,
+            getToken = gAuthViewModel::getToken
         )
     }
 }
@@ -31,7 +32,8 @@ fun GAuthScreen(
 fun GAuthSignin(
     clientId: String = GAUTH_KEY,
     Uri: String = "https://localhost:3000",
-    setToken: (String) -> Unit
+    setToken: (String) -> Unit,
+    getToken: () -> Unit
 ) {
     GAuthSigninWebView(
         clientId = clientId,
@@ -46,6 +48,7 @@ fun GAuthSignin(
             ) { token ->
                 token.accessToken?.let {
                     setToken(it)
+                    getToken()
                 }
             }
         }

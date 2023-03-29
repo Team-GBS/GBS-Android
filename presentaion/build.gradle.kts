@@ -59,6 +59,7 @@ fun getApiKey(propertyKey: String): String {
 
 dependencies {
     implementation(project(":data"))
+    implementation(project(":di"))
 
     implementation(Dependency.Androidx.CORE_KTX)
     implementation(Dependency.Androidx.LIFECYCLE)
