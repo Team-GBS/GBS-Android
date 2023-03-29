@@ -1,15 +1,17 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(Dependency.GradlePlugin.ANDROID_LIBRARY)
+    id(Dependency.GradlePlugin.KOTLIN_ANDROID)
+    id(Dependency.GradlePlugin.HILT)
+    kotlin("kapt")
 }
 
 android {
     namespace  = "com.gbs.data"
-    compileSdk  = 33
+    compileSdk  = Versions.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 33
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
     }
 
     buildTypes {
@@ -34,4 +36,7 @@ dependencies {
     testImplementation(Dependency.UnitTest.JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    implementation(Dependency.Androidx.DATASTORE)
+    implementation(Dependency.Google.HILT)
+    kapt(Dependency.Google.HILT_COMPILER)
 }

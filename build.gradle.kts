@@ -1,5 +1,6 @@
 plugins {
-    id("com.android.application") version "7.3.1" apply false
-    id("com.android.library") version "7.3.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.8.10" apply false
+    id(Dependency.GradlePlugin.ANDROID_APPLICATION) version Versions.GRADLE_ANDROID apply false
+    id(Dependency.GradlePlugin.ANDROID_LIBRARY) version Versions.GRADLE_ANDROID apply false
+    id(Dependency.GradlePlugin.KOTLIN_ANDROID) version Versions.GRADLE_KOTLIN apply false
+    id(Dependency.GradlePlugin.HILT) version Versions.HILT apply false
 }

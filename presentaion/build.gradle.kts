@@ -1,16 +1,20 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(Dependency.GradlePlugin.ANDROID_APPLICATION)
+    id(Dependency.GradlePlugin.KOTLIN_ANDROID)
+    id(Dependency.GradlePlugin.HILT)
+    kotlin("kapt")
 }
 
 android {
     namespace = "com.gbs.gbs_android"
-    compileSdk = 33
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
         applicationId = "com.gbs.gbs_android"
-        minSdk = 21
-        targetSdk = 33
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
         versionCode = 1
         versionName = "1.0"
 
@@ -18,6 +22,9 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "GAUTH_KEY", getApiKey("GAUTH_KEY"))
+        buildConfigField("String", "GAUTH_KEY_SECRET", getApiKey("GAUTH_KEY_SECRET"))
     }
 
     buildTypes {
@@ -46,7 +53,14 @@ android {
     }
 }
 
+fun getApiKey(propertyKey: String): String {
+    return gradleLocalProperties(rootDir).getProperty(propertyKey)
+}
+
 dependencies {
+    implementation(project(":data"))
+    implementation(project(":di"))
+
     implementation(Dependency.Androidx.CORE_KTX)
     implementation(Dependency.Androidx.LIFECYCLE)
     implementation(Dependency.Androidx.COMPOSE)
@@ -60,4 +74,9 @@ dependencies {
     debugImplementation(Dependency.Androidx.COMPOSE_TOOLING)
     debugImplementation(Dependency.Androidx.COMPOSE_MANIFEST)
     implementation(Dependency.Androidx.SPLASH)
+    implementation(Dependency.GAuth.GAUTH)
+    implementation(Dependency.Androidx.NAVIGATION)
+    implementation(Dependency.Google.HILT)
+    kapt(Dependency.Google.HILT_COMPILER)
+    implementation(Dependency.Androidx.HILT_NAVIGATION_COMPOSE)
 }
