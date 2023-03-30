@@ -13,7 +13,7 @@ import com.gbs.gbs_android.view.navigation.GBSNavHost
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class SignInActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-                GBSNavHost(navHostController = rememberNavController())
+                GBSNavHost(navHostController = rememberNavController(), this)
             }
         }
     }

@@ -67,6 +67,7 @@ dependencies {
     implementation(Dependency.Androidx.COMPOSE_UI)
     implementation(Dependency.Androidx.COMPOSE_PREVIEW)
     implementation(Dependency.Androidx.MATERIAL3)
+    implementation(Dependency.Androidx.MATERIAL)
     testImplementation(Dependency.UnitTest.JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
