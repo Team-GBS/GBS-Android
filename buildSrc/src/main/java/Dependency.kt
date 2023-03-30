@@ -10,6 +10,7 @@ object Dependency {
         const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
         const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.MATERIAL3}"
+        const val MATERIAL = "androidx.compose.material:material:${Versions.COMPOSE}"
         const val LIFECYCLE = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
         const val COMPOSE = "androidx.activity:activity-compose:${Versions.COMPOSE}"
         const val COMPOSE_UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
