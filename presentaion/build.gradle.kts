@@ -58,6 +58,7 @@ fun getApiKey(propertyKey: String): String {
 }
 
 dependencies {
+    implementation(project(":domain"))
     implementation(project(":data"))
     implementation(project(":di"))
 
