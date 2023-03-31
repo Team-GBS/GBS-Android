@@ -15,7 +15,6 @@ import java.io.IOException
 import javax.inject.Inject
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-
 class LocalDataSourceImpl @Inject constructor(
     @ApplicationContext val context: Context
 ) : LocalDataSource {
