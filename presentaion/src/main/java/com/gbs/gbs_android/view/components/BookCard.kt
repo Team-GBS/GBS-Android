@@ -11,7 +11,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.gbs.gbs_android.R
@@ -19,7 +18,6 @@ import com.gbs.gbs_android.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BookCard(
-    item: Int,
     size: Dp
 ) {
     Column() {
@@ -35,7 +33,7 @@ fun BookCard(
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.empty_book_icon), // 서버에서 받아온 사진으로 교체 예정
-                    contentDescription = null,
+                    contentDescription = "book thumbnail",
                     modifier = Modifier.wrapContentSize(),
                 )
             }
@@ -51,10 +49,4 @@ fun BookCard(
         )
     }
 
-}
-
-@Preview
-@Composable
-fun PreviewCard() {
-//    BookCard()
 }

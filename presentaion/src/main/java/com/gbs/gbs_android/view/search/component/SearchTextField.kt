@@ -56,7 +56,7 @@ fun SearchTextField(
         )
         Icon(
             painter = painterResource(id = R.drawable.search_image),
-            contentDescription = null,
+            contentDescription = "search icon",
             modifier = Modifier
                 .padding(end = 5.dp, start = 5.dp)
                 .size(24.dp)
