@@ -3,6 +3,9 @@ package com.gbs.gbs_android.view.search
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -33,16 +36,9 @@ fun SearchScreen() {
             )
 
             val list = listOf(1,2,3,4,5,6,7,8,9,10)     // test data(추후에 서버 데이터로 교체 예정)
-            LazyColumn(modifier = Modifier.padding(top = 30.dp)) {
-                items(items = list.chunked(2)) { rowItems ->
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        rowItems.forEach { item ->
-                            BookCard(170.dp)
-                        }
-                    }
+            LazyVerticalGrid(columns = GridCells.Fixed(2), modifier = Modifier.padding(top = 30.dp)) {
+                items(list) {
+                    BookCard(size = 170.dp)
                 }
             }       // 추후 추가 예정
         }

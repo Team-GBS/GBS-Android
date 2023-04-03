@@ -44,7 +44,6 @@ fun SearchTextField(
             decorationBox = { innerTextField ->
                 Box(
                     modifier = Modifier
-//                        .weight(1f)
                         .fillMaxWidth()
                 ) {
                     if (value.isEmpty()) {
