@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -19,10 +20,8 @@ import com.gbs.gbs_android.R
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomeScreen(
-    modifier: Modifier = Modifier,
-    bookList: List<Int> = listOf()
-) {
+fun HomeScreen(modifier: Modifier = Modifier) {
+    val bookList: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
@@ -38,14 +37,14 @@ fun HomeScreen(
     ) {
         LazyColumn(
             modifier = modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(start = 18.dp, end = 18.dp, top = 25.dp)
         ) {
             item {
                 HomeBookCard()
             }
 
-            items(10) {
+            items(bookList) {
                 BookCardView()
             }
         }
@@ -70,6 +69,5 @@ fun BookCardView() {
 @Preview
 @Composable
 fun HomePreview() {
-    val list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    HomeScreen(bookList = list)
+    HomeScreen()
 }
