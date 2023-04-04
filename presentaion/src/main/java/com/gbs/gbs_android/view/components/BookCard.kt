@@ -20,7 +20,7 @@ import com.gbs.gbs_android.R
 fun BookCard(
     size: Dp
 ) {
-    Column() {
+    Column {
         Card(
             onClick = { /*TODO*/ },
             shape = RoundedCornerShape(10.dp),
@@ -48,5 +48,4 @@ fun BookCard(
             overflow = TextOverflow.Ellipsis
         )
     }
-
 }
