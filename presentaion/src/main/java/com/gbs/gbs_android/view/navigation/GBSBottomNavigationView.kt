@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
-import androidx.compose.material3.BottomAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -16,21 +15,18 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 import com.gbs.gbs_android.R
+import com.gbs.gbs_android.view.detail.DetailScreen
 import com.gbs.gbs_android.view.home.HomeScreen
-import com.gbs.gbs_android.view.home.homeRoute
 import com.gbs.gbs_android.view.profile.ProfileScreen
-import com.gbs.gbs_android.view.profile.profileRoute
 import com.gbs.gbs_android.view.search.SearchScreen
-import com.gbs.gbs_android.view.search.searchRoute
 
 sealed class BottomNavItem(
     val icon: Int, val screenRoute: String
 ) {
-    object Search: BottomNavItem(R.drawable.search_icon, searchRoute)
-    object Home: BottomNavItem(R.drawable.home_icon, homeRoute)
-    object Profile: BottomNavItem(R.drawable.profile_icon, profileRoute)
+    object Search: BottomNavItem(R.drawable.search_icon, Screen.SearchScreen.route)
+    object Home: BottomNavItem(R.drawable.home_icon, Screen.HomeScreen.route)
+    object Profile: BottomNavItem(R.drawable.profile_icon, Screen.ProfileScreen.route)
 }
 
 @Composable
@@ -78,13 +74,22 @@ fun NavigationGraph(navController: NavHostController) {
         startDestination = BottomNavItem.Home.screenRoute
     ) {
         composable(BottomNavItem.Search.screenRoute) {
-            SearchScreen()
+            SearchScreen(onCardClick = {
+                navController.navigate(Screen.DetailScreen.route)
+            })
         }
         composable(BottomNavItem.Home.screenRoute) {
-            HomeScreen()
+            HomeScreen(onCardClick = {
+                navController.navigate(Screen.DetailScreen.route)
+            })
         }
         composable(BottomNavItem.Profile.screenRoute) {
-            ProfileScreen()
+            ProfileScreen(onCardClick = {
+                navController.navigate(Screen.DetailScreen.route)
+            })
+        }
+        composable(Screen.DetailScreen.route) {
+            DetailScreen()
         }
     }
 }

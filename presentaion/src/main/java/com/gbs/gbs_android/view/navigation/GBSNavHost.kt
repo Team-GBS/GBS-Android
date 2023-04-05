@@ -5,12 +5,9 @@ import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.gbs.gbs_android.view.SignInActivity
 import com.gbs.gbs_android.view.gauth.gAuthScreen
 import com.gbs.gbs_android.view.gauth.navigateToGAuth
 import com.gbs.gbs_android.view.home.MainActivity
-import com.gbs.gbs_android.view.home.homeScreen
-import com.gbs.gbs_android.view.home.navigateToHome
 import com.gbs.gbs_android.view.login.loginRoute
 import com.gbs.gbs_android.view.login.loginScreen
 
@@ -20,7 +17,6 @@ fun GBSNavHost(navHostController: NavHostController, context: Context) {
         loginScreen(navigateToGAuth = {
             navHostController.navigateToGAuth()
         })
-        homeScreen()
         gAuthScreen(navigateToHome = {
             context.startActivity(Intent(context, MainActivity::class.java))
         })

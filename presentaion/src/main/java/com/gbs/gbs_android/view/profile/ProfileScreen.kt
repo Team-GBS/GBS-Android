@@ -27,7 +27,9 @@ import com.gbs.gbs_android.view.components.GBSButtonBackGround
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(
+    onCardClick: (Int) -> Unit
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -40,7 +42,7 @@ fun ProfileScreen() {
                 thickness = 1.5.dp,
                 modifier = Modifier.fillMaxWidth()
             )
-            UserBookInfo()
+            UserBookInfo(onCardClick)
             Divider(
                 color = Color((0xFFD9D9D9)),
                 thickness = 1.5.dp,
@@ -89,7 +91,7 @@ fun UserInfo() {
 }
 
 @Composable
-fun UserBookInfo() {
+fun UserBookInfo(onCardClick: (Int) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -103,7 +105,7 @@ fun UserBookInfo() {
                 .fillMaxWidth()
         ) {
             items(tempList) { item ->
-                BookCard(size = 85.dp)
+                BookCard(size = 85.dp, onCardClick = onCardClick, item = item)
             }
         }
 
@@ -118,7 +120,7 @@ fun UserBookInfo() {
                 .fillMaxWidth()
         ) {
             items(tempList) { item ->
-                BookCard(size = 85.dp)
+                BookCard(size = 85.dp, onCardClick = onCardClick, item = item)
             }
         }
     }
