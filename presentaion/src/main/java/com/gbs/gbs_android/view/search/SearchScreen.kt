@@ -8,7 +8,6 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.gbs.gbs_android.view.components.BookCard
 import com.gbs.gbs_android.view.search.component.SearchTextField
@@ -16,7 +15,7 @@ import com.gbs.gbs_android.view.search.component.SearchTextField
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SearchScreen() {
+fun SearchScreen(onCardClick: (Int) -> Unit) {
     Scaffold(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -40,14 +39,14 @@ fun SearchScreen() {
                     .padding(top = 30.dp)
                     .fillMaxWidth()
             ) {
-                items(list) {
+                items(list) { item ->
                     // 아이템의 가로 비율을 같게 해주는 Box.
                     Box(
                         modifier = Modifier
                             .padding(start = 16.dp, end = 16.dp)
                             .fillMaxSize()
                     ) {
-                        BookCard(size = 200.dp)     // 가로의 크기는 고정되어 있어서 높이만 변경된다.
+                        BookCard(size = 200.dp, onCardClick, item)     // 가로의 크기는 고정되어 있어서 높이만 변경된다.
                     }
                 }
             }       // 추후 추가 예정

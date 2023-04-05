@@ -18,11 +18,13 @@ import com.gbs.gbs_android.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BookCard(
-    size: Dp
+    size: Dp,
+    item: Int,
+    onCardClick: (Int) -> Unit
 ) {
     Column {
         Card(
-            onClick = { /*TODO*/ },
+            onClick = { onCardClick(item) },
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier.size(size)
         ) {
@@ -42,7 +44,8 @@ fun BookCard(
         Text(
             text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed " +
                     "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-            modifier = Modifier.padding(top = 8.dp, bottom = 30.dp, start = 5.dp, end = 5.dp)
+            modifier = Modifier
+                .padding(top = 8.dp, bottom = 30.dp, start = 5.dp, end = 5.dp)
                 .width(size),
             maxLines = 2,
             overflow = TextOverflow.Ellipsis
