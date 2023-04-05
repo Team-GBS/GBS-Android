@@ -19,7 +19,7 @@ fun BookmarkCheckBox(
 ) {
     Image(
         painter = if (!checked) painterResource(id = R.drawable.bookmark_unchecked) else painterResource(id = R.drawable.bookmark_checked),
-        contentDescription = null,
+        contentDescription = "bookmark checking",
         modifier = Modifier
             .size(40.dp)
             .padding(top = 10.dp, end = 10.dp)

@@ -62,8 +62,8 @@ fun HomeBookCard() {
 fun BookCardView(onCardClick: (Int) -> Unit, item: Int) {
     Column {
         Row {
-            BookCard(size = 180.dp, onCardClick, item)
-            BookCard(size = 180.dp, onCardClick, item)
+            BookCard(size = 180.dp, item = item, onCardClick = onCardClick)
+            BookCard(size = 180.dp, item = item, onCardClick = onCardClick)
         }
     }
 }

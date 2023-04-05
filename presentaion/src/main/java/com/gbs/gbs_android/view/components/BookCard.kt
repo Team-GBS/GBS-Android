@@ -19,8 +19,8 @@ import com.gbs.gbs_android.R
 @Composable
 fun BookCard(
     size: Dp,
-    onCardClick: (Int) -> Unit,
-    item: Int
+    item: Int,
+    onCardClick: (Int) -> Unit
 ) {
     Column {
         Card(
