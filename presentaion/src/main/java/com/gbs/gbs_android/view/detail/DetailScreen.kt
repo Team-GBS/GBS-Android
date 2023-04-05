@@ -56,8 +56,7 @@ fun DetailScreen() {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(start = 15.dp, end = 15.dp)
-                    .verticalScroll(rememberScrollState()),
+                    .padding(start = 15.dp, end = 15.dp),
             ) {
                 Text(text = "해리포터 : 불의 잔", style = TextStyle(fontSize = 23.sp))
 
