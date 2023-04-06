@@ -19,11 +19,13 @@ import com.gbs.gbs_android.R
 @Composable
 fun HomeBookCard(
     width: Dp,
-    height: Dp
+    height: Dp,
+    item: Int,
+    onCardClick: (Int) -> Unit
 ) {
     Column {
         Card(
-            onClick = { /*TODO*/ },
+            onClick = { onCardClick(item) },
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier
                 .width(width)
