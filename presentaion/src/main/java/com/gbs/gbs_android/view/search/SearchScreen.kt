@@ -46,7 +46,7 @@ fun SearchScreen(onCardClick: (Int) -> Unit) {
                             .padding(start = 16.dp, end = 16.dp)
                             .fillMaxSize()
                     ) {
-                        BookCard(size = 200.dp, item = item, onCardClick = onCardClick)     // 가로의 크기는 고정되어 있어서 높이만 변경된다.
+                        BookCard(size = 200.dp, onCardClick = onCardClick, item = item)     // 가로의 크기는 고정되어 있어서 높이만 변경된다.
                     }
                 }
             }       // 추후 추가 예정
