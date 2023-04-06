@@ -44,7 +44,7 @@ fun HomeScreen(
         LazyColumn(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(start = 18.dp, end = 18.dp, top = 25.dp)
+                .padding(start = 18.dp, end = 18.dp, top = 25.dp, bottom = 50.dp)
         ) {
             item {
                 HomeBookCard(onCardClick, 0)
