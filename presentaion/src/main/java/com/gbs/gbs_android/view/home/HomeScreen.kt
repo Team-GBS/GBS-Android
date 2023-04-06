@@ -11,10 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.gbs.gbs_android.view.components.BookCard
 import com.gbs.gbs_android.view.components.HomeBookCard
 import com.gbs.gbs_android.R
+import com.gbs.gbs_android.view.navigation.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -43,7 +46,7 @@ fun HomeScreen(
                 .padding(start = 18.dp, end = 18.dp, top = 25.dp)
         ) {
             item {
-                HomeBookCard()
+                HomeBookCard(onCardClick)
             }
 
             items(bookList) { item ->
@@ -54,8 +57,8 @@ fun HomeScreen(
 }
 
 @Composable
-fun HomeBookCard() {
-    HomeBookCard(width = 375.dp, height = 200.dp)
+fun HomeBookCard(onCardClick: (Int) -> Unit) {
+    HomeBookCard(width = 375.dp, height = 200.dp, onCardClick = onCardClick)
 }
 
 @Composable
@@ -66,4 +69,11 @@ fun BookCardView(onCardClick: (Int) -> Unit, item: Int) {
             BookCard(size = 180.dp, item = item, onCardClick = onCardClick)
         }
     }
+}
+
+@Composable
+@Preview
+fun HomeScreenPreview() {
+    val navController = rememberNavController()
+    HomeScreen(onCardClick = { navController.navigate(Screen.DetailScreen.route) })
 }
