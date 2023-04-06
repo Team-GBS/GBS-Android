@@ -70,3 +70,10 @@ fun BookCardView(onCardClick: (Int) -> Unit, item: Int) {
         }
     }
 }
+
+@Composable
+@Preview
+fun HomeScreenPreview() {
+    val navController = rememberNavController()
+    HomeScreen(onCardClick = { navController.navigate(Screen.DetailScreen.route) })
+}
