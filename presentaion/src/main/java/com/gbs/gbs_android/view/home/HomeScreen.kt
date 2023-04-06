@@ -30,7 +30,9 @@ fun HomeScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { /* ... */ },
-                modifier = modifier.background(Color(0xFFD5D7FE), shape = RoundedCornerShape(15.dp))
+                modifier = modifier
+                    .padding(bottom = 50.dp)
+                    .background(Color(0xFFD5D7FE), shape = RoundedCornerShape(15.dp))
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.write),
