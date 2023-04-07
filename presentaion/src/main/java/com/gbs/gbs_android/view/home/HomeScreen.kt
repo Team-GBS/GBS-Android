@@ -3,20 +3,24 @@ package com.gbs.gbs_android.view.home
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
+import com.gbs.gbs_android.R
 import com.gbs.gbs_android.view.components.BookCard
 import com.gbs.gbs_android.view.components.HomeBookCard
-import com.gbs.gbs_android.R
 import com.gbs.gbs_android.view.navigation.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -39,20 +43,40 @@ fun HomeScreen(
             }
         }
     ) {
-        LazyColumn(
-            modifier = modifier
-                .fillMaxWidth()
-                .padding(start = 18.dp, end = 18.dp, top = 25.dp, bottom = 40.dp)
+        Column(
+            modifier = Modifier.fillMaxSize()
         ) {
-            item {
-                HomeBookCard(onCardClick, 0)
-            }
+            Text(
+                text = "신간도서",
+                modifier = Modifier.fillMaxWidth()
+                    .padding(top = 10.dp),
+                style = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.Black
+                ),
+                textAlign = TextAlign.Center
+            )
 
-            val bookList: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)     // 나중에 서버 데이터로 바꾸기
-            items(bookList) { item ->
-                BookCardView(onCardClick, item)
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(top = 10.dp, bottom = 40.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                val bookList: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)     // 나중에 서버 데이터로 바꾸기
+                items(bookList) { item ->
+                    Box(
+                        modifier = Modifier
+                            .padding(start = 10.dp, end = 10.dp)
+                            .fillMaxWidth()
+                    ) {
+                        BookCardView(onCardClick, item)
+                    }
+                }
             }
         }
+
     }
 }
 
