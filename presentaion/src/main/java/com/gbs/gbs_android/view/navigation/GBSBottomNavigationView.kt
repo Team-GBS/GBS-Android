@@ -41,7 +41,7 @@ fun GBSBottomNavigationView(navController: NavController) {
 
     BottomNavigation(
         backgroundColor = Color.White,
-        contentColor = Color(0xFF656B80)
+        contentColor = Color(0xFF000000)
     ) {
         items.forEach { item ->
             BottomNavigationItem(

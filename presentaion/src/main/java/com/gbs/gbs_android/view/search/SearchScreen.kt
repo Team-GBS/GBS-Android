@@ -36,7 +36,7 @@ fun SearchScreen(onCardClick: (Int) -> Unit) {
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
                 modifier = Modifier
-                    .padding(top = 30.dp)
+                    .padding(top = 30.dp, bottom = 40.dp)
                     .fillMaxWidth()
             ) {
                 items(list) { item ->
