@@ -25,29 +25,42 @@ import com.gbs.gbs_android.view.components.GBSButton
 import com.gbs.gbs_android.view.components.GBSButtonBackGround
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     onCardClick: (Int) -> Unit
 ) {
-    Scaffold(
+    Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        Column(
-            modifier = Modifier.fillMaxSize()
+        // 비율 설정하기
+        Box(modifier = Modifier
+            .weight(0.5f)
+            .fillMaxWidth()
         ) {
             UserInfo()
-            Divider(
-                color = Color((0xFFD9D9D9)),
-                thickness = 1.5.dp,
-                modifier = Modifier.fillMaxWidth()
-            )
+        }
+
+        Divider(
+            color = Color((0xFFD9D9D9)),
+            thickness = 1.5.dp,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Box(modifier = Modifier
+            .weight(1.5f)
+            .fillMaxWidth()
+        ) {
             UserBookInfo(onCardClick)
-            Divider(
-                color = Color((0xFFD9D9D9)),
-                thickness = 1.5.dp,
-                modifier = Modifier.fillMaxWidth()
-            )
+        }
+
+        Divider(
+            color = Color((0xFFD9D9D9)),
+            thickness = 1.5.dp,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Box(modifier = Modifier
+            .weight(0.7f)
+            .fillMaxWidth()
+        ) {
             SettingButtons()
         }
     }
