@@ -19,6 +19,7 @@ import com.gbs.gbs_android.R
 import com.gbs.gbs_android.view.detail.DetailScreen
 import com.gbs.gbs_android.view.home.HomeScreen
 import com.gbs.gbs_android.view.profile.ProfileScreen
+import com.gbs.gbs_android.view.request.BookRequestScreen
 import com.gbs.gbs_android.view.search.SearchScreen
 
 sealed class BottomNavItem(
@@ -73,15 +74,17 @@ fun NavigationGraph(navController: NavHostController) {
         navController = navController,
         startDestination = BottomNavItem.Home.screenRoute
     ) {
+
         composable(BottomNavItem.Search.screenRoute) {
             SearchScreen(onCardClick = {
                 navController.navigate(Screen.DetailScreen.route)
             })
         }
         composable(BottomNavItem.Home.screenRoute) {
-            HomeScreen(onCardClick = {
-                navController.navigate(Screen.DetailScreen.route)
-            })
+            HomeScreen(
+                onCardClick = { navController.navigate(Screen.DetailScreen.route) },
+                onRequestButtonClick = { navController.navigate(Screen.BookRequestScreen.route) }
+            )
         }
         composable(BottomNavItem.Profile.screenRoute) {
             ProfileScreen(onCardClick = {
@@ -90,6 +93,11 @@ fun NavigationGraph(navController: NavHostController) {
         }
         composable(Screen.DetailScreen.route) {
             DetailScreen()
+        }
+        composable(Screen.BookRequestScreen.route) {
+            BookRequestScreen(onBackImageClick = {
+                navController.navigate(Screen.HomeScreen.route)
+            })
         }
     }
 }

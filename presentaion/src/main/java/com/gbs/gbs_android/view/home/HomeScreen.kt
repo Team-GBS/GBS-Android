@@ -28,12 +28,13 @@ import com.gbs.gbs_android.view.navigation.Screen
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    onCardClick: (Int) -> Unit
+    onCardClick: (Int) -> Unit,
+    onRequestButtonClick: () -> Unit
 ) {
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* ... */ },
+                onClick = { onRequestButtonClick() },
                 modifier = modifier.background(Color(0xFFD5D7FE), shape = RoundedCornerShape(15.dp))
             ) {
                 Icon(
@@ -81,11 +82,6 @@ fun HomeScreen(
 }
 
 @Composable
-fun HomeBookCard(onCardClick: (Int) -> Unit, item: Int) {
-    HomeBookCard(width = 375.dp, height = 200.dp, item = item, onCardClick = onCardClick)
-}
-
-@Composable
 fun BookCardView(onCardClick: (Int) -> Unit, item: Int) {
     Column {
         Row {
@@ -99,5 +95,8 @@ fun BookCardView(onCardClick: (Int) -> Unit, item: Int) {
 @Preview
 fun HomeScreenPreview() {
     val navController = rememberNavController()
-    HomeScreen(onCardClick = { navController.navigate(Screen.DetailScreen.route) })
+    HomeScreen(
+        onCardClick = { navController.navigate(Screen.DetailScreen.route) },
+        onRequestButtonClick = { navController.navigate(Screen.BookRequestScreen.route) }
+    )
 }
