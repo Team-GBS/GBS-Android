@@ -27,6 +27,9 @@ import com.gbs.gbs_android.view.request.component.BookRequestTextField
 fun BookRequestScreen(
     onBackImageClick: () -> Unit
 ) {
+    var bookName by remember { mutableStateOf("") }
+    var authorName by remember { mutableStateOf("") }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -69,9 +72,6 @@ fun BookRequestScreen(
                 .fillMaxWidth()
                 .weight(0.8f)
         ) {
-            var bookName by remember { mutableStateOf("") }
-            var authorName by remember { mutableStateOf("") }
-
             Text(
                 text = "책 이름",
                 modifier = Modifier.padding(top = 25.dp, start = 25.dp),
