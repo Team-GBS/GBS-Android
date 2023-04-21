@@ -26,7 +26,6 @@ fun GBSButton(
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = paddingHorizontalValue, end = paddingHorizontalValue),
-        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = when (background) {
                 GBSButtonBackGround.BLACK -> Color.Black
@@ -37,7 +36,8 @@ fun GBSButton(
                 GBSButtonBackGround.WHITE -> Color.Black
                 else -> Color.White
             }
-        )
+        ),
+        onClick = onClick
     ) {
         Text(text = text)
     }
