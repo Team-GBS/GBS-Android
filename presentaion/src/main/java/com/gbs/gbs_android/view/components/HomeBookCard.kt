@@ -28,8 +28,8 @@ fun HomeBookCard(
             modifier = Modifier
                 .width(width)
                 .height(height),
-            onClick = { onCardClick(item) },
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(10.dp),
+            onClick = { onCardClick(item) }
         ) {
             Column(
                 modifier = Modifier.fillMaxSize(),
