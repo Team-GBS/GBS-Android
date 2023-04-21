@@ -25,8 +25,8 @@ fun BookCard(
     Column {
         Card(
             modifier = Modifier.size(size),
-            onClick = { onCardClick(item) },
-            shape = RoundedCornerShape(10.dp)
+            shape = RoundedCornerShape(10.dp),
+            onClick = { onCardClick(item) }
         ) {
             Column(
                 modifier = Modifier.fillMaxSize(),
