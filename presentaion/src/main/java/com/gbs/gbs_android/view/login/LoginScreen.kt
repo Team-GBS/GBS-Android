@@ -27,7 +27,7 @@ fun LoginScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = modifier.weight(1f))
-        Image(painter = painterResource(id = R.drawable.gbs_logo), contentDescription = null)
+        Image(painter = painterResource(id = R.drawable.gbs_logo), contentDescription = "gbs_logo")
         Text(text = "GBS", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = modifier.height(45.dp))
         GAuthSignInButton(onClicked = { navigateToGAuth() })
