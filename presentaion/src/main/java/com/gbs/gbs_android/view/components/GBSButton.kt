@@ -23,10 +23,10 @@ fun GBSButton(
     onClick: () -> Unit
 ) {
     Button(
-        onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = paddingHorizontalValue, end = paddingHorizontalValue),
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = when (background) {
                 GBSButtonBackGround.BLACK -> Color.Black
