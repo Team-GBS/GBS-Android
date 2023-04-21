@@ -34,8 +34,8 @@ fun HomeScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { onRequestButtonClick() },
-                modifier = modifier.background(Color(0xFFD5D7FE), shape = RoundedCornerShape(15.dp))
+                modifier = modifier.background(Color(0xFFD5D7FE), shape = RoundedCornerShape(15.dp)),
+                onClick = { onRequestButtonClick() }
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.write),
@@ -48,9 +48,9 @@ fun HomeScreen(
             modifier = Modifier.fillMaxSize()
         ) {
             Text(
-                text = "신간도서",
                 modifier = Modifier.fillMaxWidth()
                     .padding(top = 10.dp),
+                text = "신간도서",
                 style = TextStyle(
                     fontSize = 20.sp,
                     color = Color.Black
@@ -59,10 +59,10 @@ fun HomeScreen(
             )
 
             LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
                 modifier = modifier
                     .fillMaxWidth()
                     .padding(top = 10.dp, bottom = 40.dp),
+                columns = GridCells.Fixed(2),
                 horizontalArrangement = Arrangement.Center
             ) {
                 val bookList: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)     // 나중에 서버 데이터로 바꾸기
