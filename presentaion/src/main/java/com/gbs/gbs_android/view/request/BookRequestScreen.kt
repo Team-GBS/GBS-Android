@@ -41,10 +41,10 @@ fun BookRequestScreen(
                 .background(Color.Transparent),
         ) {
             IconButton(
-                onClick = { onBackImageClick() },
                 modifier = Modifier
                     .padding(top = 5.dp, bottom = 5.dp)
                     .align(Alignment.CenterStart),
+                onClick = { onBackImageClick() }
             ) {
                 Icon(
                     imageVector = Icons.Default.ArrowBack,
@@ -54,10 +54,10 @@ fun BookRequestScreen(
             }
 
             Text(
-                text = "도서 신청",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(25.dp),
+                text = "도서 신청",
                 textAlign = TextAlign.Center,
                 style = TextStyle(
                     fontWeight = FontWeight.SemiBold,
@@ -73,16 +73,16 @@ fun BookRequestScreen(
                 .weight(0.8f)
         ) {
             Text(
-                text = "책 이름",
                 modifier = Modifier.padding(top = 25.dp, start = 25.dp),
+                text = "책 이름",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
             BookRequestTextField(value = bookName, hint = "예) 해리포터 불의 잔", onValueChange = { bookName = it })
 
             Text(
-                text = "책 저자",
                 modifier = Modifier.padding(top = 25.dp, start = 25.dp),
+                text = "책 저자",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -96,33 +96,31 @@ fun BookRequestScreen(
                 .weight(1.5f)
         ) {
             Text(
-                text = "이미지 첨부",
                 modifier = Modifier.padding(top = 25.dp),
+                text = "이미지 첨부",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
 
             IconButton(
-                onClick = { /*TODO*/ },
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                onClick = { /*TODO*/ }
             ) {
                 Icon(
-                    imageVector = Icons.Default.Phone,
-                    contentDescription = "gallery icon",
                     modifier = Modifier
                         .fillMaxWidth()
                         .size(260.dp)
-                        .align(Alignment.CenterHorizontally)
+                        .align(Alignment.CenterHorizontally),
+                    imageVector = Icons.Default.Phone,
+                    contentDescription = "gallery icon"
                 )
             }
 
             GBSButton(
                 text = "신청하기",
                 background = GBSButtonBackGround.BLACK,
-                onClick = {
-
-                }
+                onClick = { /*TODO*/ }
             )
         }
     }
