@@ -25,11 +25,11 @@ fun HomeBookCard(
 ) {
     Column {
         Card(
-            onClick = { onCardClick(item) },
-            shape = RoundedCornerShape(10.dp),
             modifier = Modifier
                 .width(width)
-                .height(height)
+                .height(height),
+            onClick = { onCardClick(item) },
+            shape = RoundedCornerShape(10.dp)
         ) {
             Column(
                 modifier = Modifier.fillMaxSize(),
@@ -37,21 +37,21 @@ fun HomeBookCard(
                 verticalArrangement = Arrangement.Center
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.empty_book_icon), // 서버에서 받아온 사진으로 교체 예정
-                    contentDescription = "book thumbnail",
                     modifier = Modifier.wrapContentSize(),
+                    painter = painterResource(id = R.drawable.empty_book_icon), // 서버에서 받아온 사진으로 교체 예정
+                    contentDescription = "book thumbnail"
                 )
             }
         }
 
         Text(
+            modifier = Modifier
+                .padding(top = 8.dp, bottom = 30.dp, start = 5.dp, end = 5.dp)
+                .width(width),
             text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed " +
                     "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-            modifier = Modifier.padding(top = 8.dp, bottom = 30.dp, start = 5.dp, end = 5.dp)
-                .width(width),
             maxLines = 2,
             overflow = TextOverflow.Ellipsis
         )
     }
-
 }
