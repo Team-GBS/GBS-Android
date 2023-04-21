@@ -25,43 +25,39 @@ fun SearchTextField(
     onValueChange: (String) -> Unit
 ) {
     Row(
-        verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
             .background(Color(0xFFEFEFEF))
-            .padding(15.dp)
-
+            .padding(15.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
         BasicTextField(
-            value = value,
-            onValueChange = onValueChange,
-            singleLine = true,
-            maxLines = maxLines,
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth(),
+            value = value,
+            singleLine = true,
+            maxLines = maxLines,
             decorationBox = { innerTextField ->
                 Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth()
                 ) {
                     if (value.isEmpty()) {
                         Text(text = hint, color = Color(0xFFCAC9C9))
                     }
                     innerTextField()
                 }
-            }
+            },
+            onValueChange = onValueChange
         )
         Icon(
-            painter = painterResource(id = R.drawable.search_image),
-            contentDescription = "search icon",
             modifier = Modifier
                 .padding(end = 5.dp, start = 5.dp)
                 .size(24.dp)
-                .clickable {
-                    Log.d("TAG", "SearchTextField: clicked.")
-                }
+                .clickable {  },
+            painter = painterResource(id = R.drawable.search_image),
+            contentDescription = "search icon"
         )
     }
 }

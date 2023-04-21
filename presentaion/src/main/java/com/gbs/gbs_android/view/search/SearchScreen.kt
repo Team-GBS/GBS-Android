@@ -33,11 +33,12 @@ fun SearchScreen(onCardClick: (Int) -> Unit) {
             )
 
             val list = listOf(1,2,3,4,5,6,7,8,9,10)     // test data(추후에 서버 데이터로 교체 예정)
+
             LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
                 modifier = Modifier
                     .padding(top = 30.dp, bottom = 40.dp)
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                columns = GridCells.Fixed(2)
             ) {
                 items(list) { item ->
                     // 아이템의 가로 비율을 같게 해주는 Box.
@@ -46,7 +47,11 @@ fun SearchScreen(onCardClick: (Int) -> Unit) {
                             .padding(start = 16.dp, end = 16.dp)
                             .fillMaxSize()
                     ) {
-                        BookCard(size = 200.dp, onCardClick = onCardClick, item = item)     // 가로의 크기는 고정되어 있어서 높이만 변경된다.
+                        BookCard( // 가로의 크기는 고정되어 있어서 높이만 변경된다.
+                            size = 200.dp,
+                            item = item,
+                            onCardClick = onCardClick
+                        )
                     }
                 }
             }       // 추후 추가 예정

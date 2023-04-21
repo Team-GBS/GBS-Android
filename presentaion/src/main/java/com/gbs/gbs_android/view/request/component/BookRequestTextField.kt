@@ -26,7 +26,6 @@ fun BookRequestTextField(
     ) {
         BasicTextField(
             value = value,
-            onValueChange = onValueChange,
             textStyle = TextStyle(fontSize = 20.sp),
             decorationBox = { innerTextField ->
                 if (value.isEmpty()) {
@@ -37,7 +36,8 @@ fun BookRequestTextField(
                     )
                 }
                 innerTextField()
-            }
+            },
+            onValueChange = onValueChange
         )
 
         Divider(

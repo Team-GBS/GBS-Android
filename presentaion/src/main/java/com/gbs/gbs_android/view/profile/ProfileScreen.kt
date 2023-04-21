@@ -33,7 +33,8 @@ fun ProfileScreen(
         modifier = Modifier.fillMaxSize()
     ) {
         // 비율 설정하기
-        Box(modifier = Modifier
+        Box(
+            modifier = Modifier
             .weight(0.5f)
             .fillMaxWidth()
         ) {
@@ -41,11 +42,12 @@ fun ProfileScreen(
         }
 
         Divider(
+            modifier = Modifier.fillMaxWidth(),
             color = Color((0xFFD9D9D9)),
-            thickness = 1.5.dp,
-            modifier = Modifier.fillMaxWidth()
+            thickness = 1.5.dp
         )
-        Box(modifier = Modifier
+        Box(
+            modifier = Modifier
             .weight(1.5f)
             .fillMaxWidth()
         ) {
@@ -53,11 +55,12 @@ fun ProfileScreen(
         }
 
         Divider(
+            modifier = Modifier.fillMaxWidth(),
             color = Color((0xFFD9D9D9)),
-            thickness = 1.5.dp,
-            modifier = Modifier.fillMaxWidth()
+            thickness = 1.5.dp
         )
-        Box(modifier = Modifier
+        Box(
+            modifier = Modifier
             .weight(0.7f)
             .fillMaxWidth()
         ) {
@@ -81,24 +84,24 @@ fun UserInfo() {
                 style = TextStyle(fontSize = 17.sp)
             )
             Text(
+                modifier = Modifier.padding(top = 4.dp),
                 text = "임가람",
-                style = TextStyle(fontSize = 18.sp),
-                modifier = Modifier.padding(top = 4.dp)
+                style = TextStyle(fontSize = 18.sp)
             )
             Text(
+                modifier = Modifier.padding(top = 4.dp),
                 text = "프로필 수정",
                 style = TextStyle(fontSize = 15.sp),
-                modifier = Modifier.padding(top = 4.dp),
                 color = Color(0xFF9E9E9E)
             )
         }
 
         Image(
-            painter = painterResource(id = R.drawable.gbs_logo),
-            contentDescription = "user profile",
             modifier = Modifier
                 .clip(CircleShape)
-                .size(100.dp)
+                .size(100.dp),
+            painter = painterResource(id = R.drawable.gbs_logo),
+            contentDescription = "user profile"
         )
     }
 }
@@ -118,13 +121,13 @@ fun UserBookInfo(onCardClick: (Int) -> Unit) {
                 .fillMaxWidth()
         ) {
             items(tempList) { item ->
-                BookCard(size = 85.dp, onCardClick = onCardClick, item = item)
+                BookCard(size = 85.dp, item = item, onCardClick = onCardClick)
             }
         }
 
         Text(
-            text = "대여한 책",
             modifier = Modifier.padding(top = 10.dp),
+            text = "대여한 책",
             style = TextStyle(fontSize = 20.sp)
         )
         LazyRow(
@@ -133,7 +136,7 @@ fun UserBookInfo(onCardClick: (Int) -> Unit) {
                 .fillMaxWidth()
         ) {
             items(tempList) { item ->
-                BookCard(size = 85.dp, onCardClick = onCardClick, item = item)
+                BookCard(size = 85.dp, item = item, onCardClick = onCardClick)
             }
         }
     }
@@ -142,15 +145,17 @@ fun UserBookInfo(onCardClick: (Int) -> Unit) {
 @Composable
 fun SettingButtons() {
     Column(
-        modifier = Modifier
-            .padding(top = 15.dp, bottom = 8.dp)
+        modifier = Modifier.padding(top = 15.dp, bottom = 8.dp)
     ) {
-        GBSButton(text = "위반사항",
+        GBSButton(
+            text = "위반사항",
             background = GBSButtonBackGround.WHITE,
-            paddingHorizontalValue = 35.dp, onClick = { /*TODO*/ }
+            paddingHorizontalValue = 35.dp,
+            onClick = { /*TODO*/ }
         )
         Spacer(modifier = Modifier.height(8.dp))
-        GBSButton(text = "로그아웃",
+        GBSButton(
+            text = "로그아웃",
             background = GBSButtonBackGround.PINK,
             paddingHorizontalValue = 35.dp,
             onClick = { /*TODO*/ }

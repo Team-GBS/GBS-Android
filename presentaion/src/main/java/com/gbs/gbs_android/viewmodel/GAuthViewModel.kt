@@ -19,19 +19,13 @@ class GAuthViewModel @Inject constructor(
 ): ViewModel() {
     fun setToken(token: String) {
         viewModelScope.launch {
-            Log.d("settoken", token)
             setTokenUseCase(token)
         }
     }
 
     fun getToken() {
         viewModelScope.launch {
-            delay(3000)
-            val token = checkNotNull(getTokenUseCase().first())
-            getTokenUseCase().collect {
-                Log.d("token", it ?: "존재하지 않습니다.")
-                Log.d("gettoken", token)
-            }
+            getTokenUseCase().collect { }
         }
     }
 }

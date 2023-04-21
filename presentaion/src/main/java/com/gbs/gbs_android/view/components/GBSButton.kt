@@ -1,6 +1,5 @@
 package com.gbs.gbs_android.view.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
@@ -24,7 +23,6 @@ fun GBSButton(
     onClick: () -> Unit
 ) {
     Button(
-        onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = paddingHorizontalValue, end = paddingHorizontalValue),
@@ -38,7 +36,8 @@ fun GBSButton(
                 GBSButtonBackGround.WHITE -> Color.Black
                 else -> Color.White
             }
-        )
+        ),
+        onClick = onClick
     ) {
         Text(text = text)
     }

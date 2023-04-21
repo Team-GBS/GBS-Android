@@ -48,9 +48,9 @@ fun GBSBottomNavigationView(navController: NavController) {
             BottomNavigationItem(
                 icon = {
                     Icon(
+                        modifier = Modifier.size(30.dp),
                         painter = painterResource(id = item.icon),
-                        contentDescription = null,
-                        modifier = Modifier.size(30.dp)
+                        contentDescription = "icon"
                     )
                 },
                 selected = currentRoute == item.screenRoute,
