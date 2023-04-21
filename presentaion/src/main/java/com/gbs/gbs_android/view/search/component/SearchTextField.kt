@@ -55,7 +55,7 @@ fun SearchTextField(
             modifier = Modifier
                 .padding(end = 5.dp, start = 5.dp)
                 .size(24.dp)
-                .clickable { Log.d("TAG", "SearchTextField: clicked.") },
+                .clickable {  },
             painter = painterResource(id = R.drawable.search_image),
             contentDescription = "search icon"
         )
