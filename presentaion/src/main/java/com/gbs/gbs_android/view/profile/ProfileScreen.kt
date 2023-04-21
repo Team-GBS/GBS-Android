@@ -121,7 +121,7 @@ fun UserBookInfo(onCardClick: (Int) -> Unit) {
                 .fillMaxWidth()
         ) {
             items(tempList) { item ->
-                BookCard(size = 85.dp, onCardClick = onCardClick, item = item)
+                BookCard(size = 85.dp, item = item, onCardClick = onCardClick)
             }
         }
 
@@ -136,7 +136,7 @@ fun UserBookInfo(onCardClick: (Int) -> Unit) {
                 .fillMaxWidth()
         ) {
             items(tempList) { item ->
-                BookCard(size = 85.dp, onCardClick = onCardClick, item = item)
+                BookCard(size = 85.dp, item = item, onCardClick = onCardClick)
             }
         }
     }
@@ -151,7 +151,8 @@ fun SettingButtons() {
         GBSButton(
             text = "위반사항",
             background = GBSButtonBackGround.WHITE,
-            paddingHorizontalValue = 35.dp, onClick = { /*TODO*/ }
+            paddingHorizontalValue = 35.dp,
+            onClick = { /*TODO*/ }
         )
         Spacer(modifier = Modifier.height(8.dp))
         GBSButton(
