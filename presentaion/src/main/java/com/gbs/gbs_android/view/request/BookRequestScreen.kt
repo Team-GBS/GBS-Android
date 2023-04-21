@@ -31,8 +31,7 @@ fun BookRequestScreen(
     var authorName by remember { mutableStateOf("") }
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
         Box(
             modifier = Modifier
@@ -103,8 +102,7 @@ fun BookRequestScreen(
             )
 
             IconButton(
-                modifier = Modifier
-                    .fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(),
                 onClick = { /*TODO*/ }
             ) {
                 Icon(

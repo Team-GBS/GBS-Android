@@ -75,8 +75,7 @@ fun DetailScreen() {
             )
 
             Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(text = "저자", color = Color(0xFFCAC9C9), maxLines = 1)

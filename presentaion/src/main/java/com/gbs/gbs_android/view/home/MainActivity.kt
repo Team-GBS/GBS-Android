@@ -34,7 +34,9 @@ fun SetBottomNav() {
     val navController = rememberNavController()
 
     Scaffold(
-        modifier = Modifier.fillMaxSize().systemBarsPadding(),
+        modifier = Modifier
+            .fillMaxSize()
+            .systemBarsPadding(),
         bottomBar = {
             GBSBottomNavigationView(navController = navController)
         }

@@ -41,8 +41,7 @@ fun SearchTextField(
             maxLines = maxLines,
             decorationBox = { innerTextField ->
                 Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth()
                 ) {
                     if (value.isEmpty()) {
                         Text(text = hint, color = Color(0xFFCAC9C9))

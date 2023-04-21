@@ -42,7 +42,8 @@ fun BookCard(
         }
 
         Text(
-            modifier = Modifier.padding(top = 8.dp, bottom = 30.dp, start = 5.dp, end = 5.dp)
+            modifier = Modifier
+                .padding(top = 8.dp, bottom = 30.dp, start = 5.dp, end = 5.dp)
                 .width(size),
             text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed " +
                     "ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",

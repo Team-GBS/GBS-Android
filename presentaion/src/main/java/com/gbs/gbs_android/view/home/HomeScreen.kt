@@ -48,7 +48,8 @@ fun HomeScreen(
             modifier = Modifier.fillMaxSize()
         ) {
             Text(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
                     .padding(top = 10.dp),
                 text = "신간도서",
                 style = TextStyle(

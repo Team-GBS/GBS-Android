@@ -145,8 +145,7 @@ fun UserBookInfo(onCardClick: (Int) -> Unit) {
 @Composable
 fun SettingButtons() {
     Column(
-        modifier = Modifier
-            .padding(top = 15.dp, bottom = 8.dp)
+        modifier = Modifier.padding(top = 15.dp, bottom = 8.dp)
     ) {
         GBSButton(
             text = "위반사항",
